@@ -9,7 +9,7 @@ Person(student, "Student")
 System(korekto, "Korekto", "Grades student exercises")
 
 System_Ext(github, "GitHub", "Git service host")
-SystemDb_Ext(db, "Google drive", "Store state of grades and deadlines")
+System_Ext(db, "Google drive", "Store state of grades and deadlines")
 
 Rel(teacher, korekto, "Create exercise")
 Rel(student, korekto, "Register into, look up grades")
@@ -38,7 +38,7 @@ System_Boundary(c1, "Korekto") {
 }
 
 System_Ext(github, "GitHub", "Git service host")
-SystemDb_Ext(db, "Google drive", "Store state of grades and deadlines")
+System_Ext(db, "Google drive", "Store state of grades and deadlines")
 
 Rel(teacher, server, "Create exercise", "HTTPS")
 Rel(student, server, "Register into, look up grades", "HTTPS")
@@ -70,7 +70,7 @@ System_Boundary(c1, "Korekto") {
 }
 
 System_Ext(github, "GitHub", "Git service host")
-SystemDb_Ext(db, "Google drive", "Store state of grades and deadlines")
+System_Ext(db, "Google drive", "Store state of grades and deadlines")
 
 Rel(teacher, lb, "Create exercise", "HTTPS")
 Rel(student, lb, "Register into, look up grades", "HTTPS")
@@ -104,7 +104,7 @@ System_Boundary(c1, "Korekto") {
 }
 
 System_Ext(github, "GitHub", "Git service host")
-SystemDb_Ext(db, "Google drive", "Store state of grades and deadlines")
+System_Ext(db, "Google drive", "Store state of grades and deadlines")
 
 Rel(teacher, lb, "Create exercise", "HTTPS")
 Rel(student, lb, "Register into, look up grades", "HTTPS")
@@ -139,7 +139,7 @@ System_Boundary(c1, "Korekto") {
 }
 
 System_Ext(github, "GitHub", "Git service host")
-SystemDb_Ext(db, "Google drive", "Store state of grades and deadlines")
+System_Ext(db, "Google drive", "Store state of grades and deadlines")
 
 Rel(teacher, lb, "Create exercise", "HTTPS")
 Rel(student, lb, "Register into, look up grades", "HTTPS")
@@ -181,7 +181,7 @@ System_Boundary(c1, "Korekto") {
 }
 
 System_Ext(github, "GitHub", "Git service host")
-SystemDb_Ext(db, "Google drive", "Store state of grades and deadlines")
+System_Ext(db, "Google drive", "Store state of grades and deadlines")
 
 Rel(teacher, lb, "Create exercise", "HTTPS")
 Rel(student, lb, "Register into, look up grades", "HTTPS")
