@@ -66,7 +66,7 @@ Person(student, "Student")
 
 System_Boundary(c1, "Korekto") {
     Container(lb, "Load-Balancer", "HAProxy")
-    ContainerC(server, "Korekto\ninstances", "Spring-Boot, Kotlin", "Authenticate users.\nServes website.\nGrade exercises every 4 hours.")
+    ContainerC(server, "Korekto\ninstances", "Spring-Boot, Kotlin", "Authenticate users.\nServes website.\nGrade exercises every 4 hours.") #Blue
 }
 
 System_Ext(github, "GitHub", "Git service host")
@@ -99,8 +99,8 @@ Person(student, "Student")
 
 System_Boundary(c1, "Korekto") {
     Container(lb, "Load-Balancer", "HAProxy")
-    ContainerC(server, "Korekto Web\ninstances", "Spring-Boot, Kotlin", "Authenticate users.\nServes website.")
-    Container(server2, "Korekto batch", "Spring-Boot, Kotlin", "Grade all exercises every 4 hours")
+    ContainerC(server, "Korekto Web\ninstances", "Spring-Boot, Kotlin", "Authenticate users.\nServes website.") #Blue
+    Container(server2, "Korekto batch", "Spring-Boot, Kotlin", "Grade all exercises every 4 hours") #Blue
 }
 
 System_Ext(github, "GitHub", "Git service host")
@@ -134,8 +134,8 @@ Person(student, "Student")
 
 System_Boundary(c1, "Korekto") {
     Container(lb, "Load-Balancer", "HAProxy")
-    ContainerC(server, "Korekto Web\ninstances", "Spring-Boot, Kotlin", "Authenticate users.\nServes website & APIs.")
-    ContainerC(server2, "Korekto grader", "Spring-Boot, Kotlin", "Grade exercise when notified")
+    ContainerC(server, "Korekto Web\ninstances", "Spring-Boot, Kotlin", "Authenticate users.\nServes website & APIs.") #Blue
+    ContainerC(server2, "Korekto grader", "Spring-Boot, Kotlin", "Grade exercise when notified") #Blue
 }
 
 System_Ext(github, "GitHub", "Git service host")
@@ -173,11 +173,11 @@ Person(student, "Student")
 System_Boundary(c1, "Korekto") {
     Container(lb, "Load-Balancer", "HAProxy")
 
-    ContainerC(server, "Korekto Web\ninstances", "Spring-Boot, Kotlin", "Authenticate users.\nServes website & APIs.")
-    ContainerC(server2, "Korekto grader", "Spring-Boot, Kotlin", "Grade exercise when notified")
+    ContainerC(server, "Korekto Web\ninstances", "Spring-Boot, Kotlin", "Authenticate users.\nServes website & APIs.") #Blue
+    ContainerC(server2, "Korekto grader", "Spring-Boot, Kotlin", "Grade exercise when notified") #Blue
 
     Container(lb2, "Load-Balancer", "HAProxy")
-    ContainerC(server3, "Korekto storage API", "Spring-Boot, Kotlin", "serves API to read & write state")
+    ContainerC(server3, "Korekto storage API", "Spring-Boot, Kotlin", "serves API to read & write state") #Blue
 }
 
 System_Ext(github, "GitHub", "Git service host")
