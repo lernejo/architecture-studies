@@ -57,7 +57,7 @@ Rel(server, github, "Publish feedbacks / issues", "HTTPS")
 @startuml
 !includeurl C4_Container.puml
 
-!define ContainerC(e_alias, e_label, e_techn, e_descr) collections "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<container>> as e_alias
+!define ContainerC(e_alias, e_label, e_techn, e_descr) collections "==e_label\n//e_techn//\n\n e_descr" <<container>> as e_alias
 
 title Container diagram V1
 
@@ -90,7 +90,7 @@ Rel(server, github, "Pull exercices & Publish issues", "SSH")
 @startuml
 !includeurl C4_Container.puml
 
-!define ContainerC(e_alias, e_label, e_techn, e_descr) collections "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<container>> as e_alias
+!define ContainerC(e_alias, e_label, e_techn, e_descr) collections "==e_label\n//e_techn//\n\n e_descr" <<container>> as e_alias
 
 title Container diagram V2
 
@@ -100,7 +100,7 @@ Person(student, "Student")
 System_Boundary(c1, "Korekto") {
     Container(lb, "Load-Balancer", "HAProxy")
     ContainerC(server, "Korekto Web\ninstances", "Spring-Boot, Kotlin", "Authenticate users.\nServes website.") #Blue
-    Container(server2, "Korekto batch", "Spring-Boot, Kotlin", "Grade all exercises every 4 hours") #Blue
+    Container(server2, "Korekto batch", "Spring-Boot, Kotlin", "Grade all exercises every 4 hours")
 }
 
 System_Ext(github, "GitHub", "Git service host")
@@ -125,7 +125,7 @@ Rel(server2, github, "Pull exercices & Publish issues", "SSH")
 @startuml
 !includeurl C4_Container.puml
 
-!define ContainerC(e_alias, e_label, e_techn, e_descr) collections "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<container>> as e_alias
+!define ContainerC(e_alias, e_label, e_techn, e_descr) collections "==e_label\n//e_techn//\n\n e_descr" <<container>> as e_alias
 
 title Container diagram V3
 
@@ -163,7 +163,7 @@ Rel(github, lb, "Notify on **push** events")
 @startuml
 !includeurl C4_Container.puml
 
-!define ContainerC(e_alias, e_label, e_techn, e_descr) collections "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<container>> as e_alias
+!define ContainerC(e_alias, e_label, e_techn, e_descr) collections "==e_label\n//e_techn//\n\n e_descr" <<container>> as e_alias
 
 title Container diagram V4
 
