@@ -9,7 +9,7 @@ Person(student, "Student")
 System(korekto, "Korekto", "Grades student exercises")
 
 System_Ext(github, "GitHub", "Git service host")
-System_Ext(db, "Google drive", "Store state of grades and deadlines")
+System_Ext(db, "Heroku PostgreSQL", "Store state of grades and deadlines")
 
 Rel(teacher, korekto, "Create exercise")
 Rel(student, korekto, "Register into, look up grades")
@@ -18,7 +18,7 @@ Rel(student, github, "Publish exercices")
 
 Rel(korekto, github, "Pull exercices from")
 Rel(korekto, github, "Publish feedbacks / issues")
-Rel(korekto, db, "Read & Write state", "HTTPS")
+Rel(korekto, db, "Read & Write state", "TCP/IP")
 @enduml
 ```
 
@@ -38,12 +38,12 @@ System_Boundary(c1, "Korekto") {
 }
 
 System_Ext(github, "GitHub", "Git service host")
-System_Ext(db, "Google drive", "Store state of grades and deadlines")
+System_Ext(db, "Heroku PostgreSQL", "Store state of grades and deadlines")
 
 Rel(teacher, server, "Create exercise", "HTTPS")
 Rel(student, server, "Register into, look up grades", "HTTPS")
 Rel(student, github, "Publish exercices", "SSH")
-Rel(server, db, "Read & Write state", "HTTPS")
+Rel(server, db, "Read & Write state", "TCP/IP")
 
 Rel(server, github, "Pull exercices from", "SSH")
 Rel(server, github, "Publish feedbacks / issues", "HTTPS")
@@ -70,14 +70,14 @@ System_Boundary(c1, "Korekto") {
 }
 
 System_Ext(github, "GitHub", "Git service host")
-System_Ext(db, "Google drive", "Store state of grades and deadlines")
+System_Ext(db, "Heroku PostgreSQL", "Store state of grades and deadlines")
 
 Rel(teacher, lb, "Create exercise", "HTTPS")
 Rel(student, lb, "Register into, look up grades", "HTTPS")
 Rel(student, github, "Publish exercices", "SSH")
 
 Rel(lb, server, "Dispatch calls", "HTTP")
-Rel(server, db, "Read & Write state", "HTTPS")
+Rel(server, db, "Read & Write state", "TCP/IP")
 
 Rel(server, github, "Pull exercices & Publish issues", "SSH")
 
@@ -104,14 +104,14 @@ System_Boundary(c1, "Korekto") {
 }
 
 System_Ext(github, "GitHub", "Git service host")
-System_Ext(db, "Google drive", "Store state of grades and deadlines")
+System_Ext(db, "Heroku PostgreSQL", "Store state of grades and deadlines")
 
 Rel(teacher, lb, "Create exercise", "HTTPS")
 Rel(student, lb, "Register into, look up grades", "HTTPS")
 Rel(student, github, "Publish exercices", "SSH")
 
 Rel(lb, server, "Dispatch calls", "HTTP")
-Rel(server, db, "Read & Write state", "HTTPS")
+Rel(server, db, "Read & Write state", "TCP/IP")
 
 Rel(server2, db, "Read & Write state", "HTTPS")
 Rel(server2, github, "Pull exercices & Publish issues", "SSH")
@@ -139,14 +139,14 @@ System_Boundary(c1, "Korekto") {
 }
 
 System_Ext(github, "GitHub", "Git service host")
-System_Ext(db, "Google drive", "Store state of grades and deadlines")
+System_Ext(db, "Heroku PostgreSQL", "Store state of grades and deadlines")
 
 Rel(teacher, lb, "Create exercise", "HTTPS")
 Rel(student, lb, "Register into, look up grades", "HTTPS")
 Rel(student, github, "Publish exercices", "SSH")
 
 Rel(lb, server, "Dispatch web calls", "HTTP")
-Rel(server, db, "Read & Write state", "HTTPS")
+Rel(server, db, "Read & Write state", "TCP/IP")
 Rel(lb, server2, "Dispatch push events", "HTTP")
 
 Rel(server2, db, "Read & Write state", "HTTPS")
@@ -181,7 +181,7 @@ System_Boundary(c1, "Korekto") {
 }
 
 System_Ext(github, "GitHub", "Git service host")
-System_Ext(db, "Google drive", "Store state of grades and deadlines")
+System_Ext(db, "Heroku PostgreSQL", "Store state of grades and deadlines")
 
 Rel(teacher, lb, "Create exercise", "HTTPS")
 Rel(student, lb, "Register into, look up grades", "HTTPS")
@@ -192,7 +192,7 @@ Rel(server, lb2, "Read & Write state", "HTTP")
 Rel(lb, server2, "Dispatch push events", "HTTP")
 
 Rel(lb2, server3, "Dispatch calls", "HTTP")
-Rel(server3, db, "Read & Write state", "HTTPS")
+Rel(server3, db, "Read & Write state", "TCP/IP")
 
 Rel(server2, lb2, "Read & Write state", "HTTP")
 Rel(server2, github, "Pull exercices & Publish issues", "SSH")
